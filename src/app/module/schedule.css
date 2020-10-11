@@ -1,0 +1,18 @@
+tr td:first-child,
+tr td:nth-child(2)  {
+    text-align: center !important;
+}
+.tr-odd td {
+    background-color:papayawhip;
+}
+.tr-odd td:first-child, 
+.tr-odd td:nth-child(2) {
+    color: red;
+}
+.header td {
+    text-align: center !important;
+}
+
+.right {
+    float: right;
+  }

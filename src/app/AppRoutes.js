@@ -26,13 +26,17 @@ const Register1 = lazy(() => import('./user-pages/Register'));
 
 const BlankPage = lazy(() => import('./user-pages/BlankPage'));
 
+const TimeCheckPage = lazy(() => import('./time-check/TimeCheckPage'));
+
+const TimeSheetPage = lazy(() => import('./time-check/TimeSheetPage'));
+
 
 class AppRoutes extends Component {
   render () {
     return (
       <Suspense fallback={<Spinner/>}>
         <Switch>
-          <Route exact path="/dashboard" component={ Dashboard } />
+          <Route path="/dashboard" component={ Dashboard } />
 
           <Route path="/basic-ui/buttons" component={ Buttons } />
           <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
@@ -54,6 +58,10 @@ class AppRoutes extends Component {
           <Route path="/user-pages/error-500" component={ Error500 } />
 
           <Route path="/user-pages/blank-page" component={ BlankPage } />
+
+          <Route path="/time-check/TimeCheckPage" component={ TimeCheckPage } />
+
+          <Route path="/time-check/TimeSheetPage" component={ TimeSheetPage } />
 
 
           <Redirect to="/user-pages/login-1" />

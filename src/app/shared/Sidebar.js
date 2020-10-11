@@ -38,6 +38,7 @@ class Sidebar extends Component {
       {path:'/icons', state: 'iconsMenuOpen'},
       {path:'/charts', state: 'chartsMenuOpen'},
       {path:'/user-pages', state: 'userPagesMenuOpen'},
+      {path:'/time-check', state: 'timeCheckPageOpen'},
     ];
 
     dropdownPaths.forEach((obj => {
@@ -166,6 +167,19 @@ class Sidebar extends Component {
               <i className="mdi mdi-file-outline menu-icon"></i>
               <span className="menu-title">Documentation</span>
             </a>
+          </li>
+          <li className={ this.isPathActive('/time-check') ? 'nav-item active' : 'nav-item' }>
+            <div className={ this.state.timeCheckPageOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('timeCheckPageOpen') } data-toggle="collapse">
+              <i className="mdi mdi-clock-fast menu-icon"></i>
+              <span className="menu-title">TimeCheck Page</span>
+              <i className="menu-arrow"></i>
+            </div>
+            <Collapse in={ this.state.timeCheckPageOpen }>
+              <ul className="nav flex-column sub-menu">
+                <li className="nav-item"> <Link className={ this.isPathActive('/time-check/TimeCheckPage') ? 'nav-link active' : 'nav-link' } to="/time-check/TimeCheckPage">TimeCheck Page</Link></li>
+                <li className="nav-item"> <Link className={ this.isPathActive('/time-check/TimeSheetPage') ? 'nav-link active' : 'nav-link' } to="/time-check/TimeSheetPage">TimeSheet Page</Link></li>
+              </ul>
+            </Collapse>
           </li>
         </ul>
       </nav>
